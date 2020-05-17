@@ -22,6 +22,7 @@ function handleCategoriesClick() {
       return acc;
     }, "");
     categoriesList.insertAdjacentHTML("beforeend", temp);
+    searchInput.classList.remove("active");
   }
 }
 
@@ -37,6 +38,18 @@ const random = document.querySelector("#random");
 random.addEventListener("click", handleRandomClick);
 function handleRandomClick() {
   categoriesList.classList.remove("active");
+  searchInput.classList.remove("active");
+}
+
+const search = document.querySelector("#search");
+const searchInput = document.querySelector(".search-input");
+
+search.addEventListener("click", handleSearchClick);
+function handleSearchClick() {
+  if (search.checked) {
+    categoriesList.classList.remove("active");
+    searchInput.classList.add("active");
+  }
 }
 
 const getJoke = document.querySelector(".js-get-joke");
@@ -72,13 +85,63 @@ function getANewJoke() {
           const { id, value, url, updated_at, categories } = data;
           createJoke(id, url, value, categories, updated_at);
         });
+      return;
+    }
+    if (el.checked && el.id === "search") {
+      const input = document.querySelector(".forsearch");
+      const inputQuery = input.value;
+      if (!inputQuery) {
+        alert("I dont know what to search");
+        return;
+      }
+      const apiForSearch = `https://api.chucknorris.io/jokes/search?query=${inputQuery}`;
+      fetch(apiForSearch)
+        .then((responce) => responce.json())
+        .then((data) => {
+          input.value = "";
+          if (data.result.length === 0) {
+            alert("There is nothing connected with your query. Sorry :(");
+            return;
+          }
+          const posts = data.result;
+          let amountOfPosts = posts.length;
+          posts.forEach((post) => {
+            const { id, value, url, updated_at, categories } = post;
+            createJoke(
+              id,
+              url,
+              value,
+              categories,
+              updated_at,
+              true,
+              posts.length,
+              amountOfPosts
+            );
+            amountOfPosts--;
+          });
+        });
     }
   });
 }
 
-function createJoke(id, url, value, categories, updated_at) {
+function createJoke(
+  id,
+  url,
+  value,
+  categories,
+  updated_at,
+  isSearch = false,
+  numberOfPosts,
+  jokesLeft
+) {
   const jokes = document.querySelector(".js-jokes");
-  jokes.innerHTML = "";
+  if (!isSearch) {
+    jokes.innerHTML = "";
+  } else {
+    if (numberOfPosts === jokesLeft) {
+      jokes.innerHTML = "";
+    }
+  }
 
   const today = new Date();
   const date =
@@ -87,6 +150,7 @@ function createJoke(id, url, value, categories, updated_at) {
     today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
   const dateTime = date + " " + time;
 
+  // console.log(dateTime, updated_at);
   if (categories[0]) {
     jokes.insertAdjacentHTML(
       "beforeend",
