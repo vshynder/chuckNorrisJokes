@@ -305,6 +305,6 @@ function updateFavSection() {
       `;
       return acc;
     }, "");
-    sectionFolder.insertAdjacentHTML("beforeend", content);
+    sectionFolder.insertAdjacentHTML("afterbegin", content);
   }
 }
