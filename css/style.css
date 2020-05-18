@@ -22,6 +22,7 @@
 
 .fav-section {
     display: flex;
+    z-index: 4;
 }
 
 .circle {
@@ -258,6 +259,10 @@
     margin-bottom: 20px;
 }
 
+.joke__container--fav {
+    background-color: #ffffff;
+}
+
 .heart {
     display: block;
     padding: 20px 20px 10px 0;
@@ -269,8 +274,7 @@
 }
 
 .joke_content {
-    width: 240px;
-    padding: 0 0 20px 80px;
+    padding: 0 20px 20px 80px;
     position: relative;
 }
 
@@ -339,4 +343,124 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #333333;
+}
+
+.favourite__section-dark,
+.favourite__section {
+    background: #F8F8F8;
+    width: 100vw;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    opacity: 0;
+    transition: 0.3s;
+    visibility: hidden;
+}
+
+.favourite__section {
+    right: -10000px;
+    padding: 88px 0 20px 0;
+}
+
+.favourite__section-dark {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.circle__cross {
+    box-sizing: border-box;
+    width: 28px;
+    height: 28px;
+    padding: 6px;
+    opacity: 0;
+}
+
+.fallout-active {
+    opacity: 1;
+    right: 0;
+    visibility: visible;
+    width: 100%;
+}
+
+.make-cross {
+    display: none;
+}
+
+.section__name {
+    display: none;
+}
+
+.joke__container--fav {
+    margin: auto;
+    margin-bottom: 20px;
+    width: calc(100% - 40px);
+
+}
+
+.joke__category--fav {
+    background-color: #F8F8F8;
+}
+
+@media (min-width: 800px) {
+    .container {
+        width: 754px;
+    }
+
+    .joke_content {
+        padding: 0 40px 20px 100px;
+    }
+
+    .joke__info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .favourite__section {
+        width: 480px;
+    }
+
+    .context__header {
+        padding-top: 40px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        width: 680px;
+        margin-left: 140px;
+    }
+
+    .favourite__section-dark,
+    .favourite__section {
+        visibility: visible;
+        opacity: 1;
+        right: 0;
+        width: 480px;
+    }
+
+    .favourite__section {
+        padding: 40px;
+    }
+
+    .favourite__section-dark {
+        width: 0px;
+    }
+
+    .fav-section {
+        display: none;
+    }
+
+    .section__name {
+        display: block;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 28px;
+        color: #ABABAB;
+        padding-bottom: 20px;
+    }
 }
