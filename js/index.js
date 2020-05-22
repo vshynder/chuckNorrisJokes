@@ -4,6 +4,7 @@ const apiRandom = "https://api.chucknorris.io/jokes/random";
 const apiCategories = "https://api.chucknorris.io/jokes/categories";
 
 const input = document.querySelectorAll(".jokes__input");
+const sectionFolder = document.querySelector(".section__folder");
 
 updateFavSection();
 
@@ -269,7 +270,7 @@ function setToLocalStorage(id, url, value, lastUpdate) {
   } else {
     lsObj[id] = favObj;
   }
-  console.log(lsObj);
+  // console.log(lsObj);
   const lsObjJson = JSON.stringify(lsObj);
   localStorage.setItem(LS_KEY, lsObjJson);
   // const favObj = localStorage.getItem(LS_KEY);
@@ -277,11 +278,10 @@ function setToLocalStorage(id, url, value, lastUpdate) {
 
 // fav section rendering
 function updateFavSection() {
-  const sectionFolder = document.querySelector(".section__folder");
   sectionFolder.innerHTML = "";
   const lsContent = JSON.parse(localStorage.getItem(LS_KEY));
   if (lsContent) {
-    const posts = Object.values(lsContent);
+    const posts = Object.values(lsContent).reverse();
     const content = posts.reduce((acc, el) => {
       acc += `
       <div class="joke__container joke__container--fav">
@@ -305,6 +305,28 @@ function updateFavSection() {
       `;
       return acc;
     }, "");
-    sectionFolder.insertAdjacentHTML("afterbegin", content);
+    sectionFolder.insertAdjacentHTML("beforeend", content);
+  }
+}
+
+sectionFolder.addEventListener("click", removeFromFav);
+
+function removeFromFav(event) {
+  if (event.target.tagName === "IMG") {
+    // console.log(event.target.parentNode);
+    const id = event.target.parentNode.querySelector(".js_ID").textContent;
+    const ls = JSON.parse(localStorage.getItem(LS_KEY));
+    delete ls[id];
+    const lsJson = JSON.stringify(ls);
+    localStorage.setItem(LS_KEY, lsJson);
+    updateFavSection();
+    const allJokes = Array.from(jokes.querySelectorAll(".joke__container"));
+    allJokes.forEach((joke) => {
+      // console.log(joke);
+      const cId = joke.querySelector(".js_ID").textContent;
+      if (cId === id) {
+        joke.querySelector(".heart").click();
+      }
+    });
   }
 }
