@@ -96,7 +96,15 @@ function getANewJoke() {
       const input = document.querySelector(".forsearch");
       const inputQuery = input.value;
       if (!inputQuery) {
-        alert("I dont know what to search");
+        alert("I dont know what to search!");
+        return;
+      }
+      if (inputQuery.length <= 3) {
+        alert("Input has to be more then 3 but less then 120.");
+        return;
+      }
+      if (inputQuery.length >= 120) {
+        alert("Input has to be more then 3 but less then 120.");
         return;
       }
       const apiForSearch = `https://api.chucknorris.io/jokes/search?query=${inputQuery}`;
