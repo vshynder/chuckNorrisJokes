@@ -360,7 +360,7 @@
 }
 
 .favourite__section {
-    right: -10000px;
+    right: 0;
     padding: 88px 0 20px 0;
 }
 
