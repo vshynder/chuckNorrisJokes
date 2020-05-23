@@ -278,7 +278,6 @@ function setToLocalStorage(id, url, value, lastUpdate) {
   } else {
     lsObj[id] = favObj;
   }
-  // console.log(lsObj);
   const lsObjJson = JSON.stringify(lsObj);
   localStorage.setItem(LS_KEY, lsObjJson);
   // const favObj = localStorage.getItem(LS_KEY);
@@ -326,6 +325,7 @@ function removeFromFav(event) {
     const ls = JSON.parse(localStorage.getItem(LS_KEY));
     delete ls[id];
     const lsJson = JSON.stringify(ls);
+    // console.log(ls);
     localStorage.setItem(LS_KEY, lsJson);
     updateFavSection();
     const allJokes = Array.from(jokes.querySelectorAll(".joke__container"));

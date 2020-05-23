@@ -1,466 +1,461 @@
 .container {
-    width: 340px;
-    margin: auto;
+  width: 340px;
+  margin: auto;
 }
 
 .context__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0 78px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 78px 0;
 }
 
 .logo {
-    margin: 0;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 28px;
-    color: #333333;
+  margin: 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+  color: #333333;
 }
 
 .fav-section {
-    display: flex;
-    z-index: 4;
+  display: flex;
+  z-index: 4;
 }
 
 .circle {
-    border-radius: 50%;
-    background-color: #333333;
-    width: 28px;
-    height: 28px;
-    position: relative;
+  border-radius: 50%;
+  background-color: #333333;
+  width: 28px;
+  height: 28px;
+  position: relative;
 }
 
 .circle__rect {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .circle__rect--top {
-    top: 10px;
+  top: 10px;
 }
 
 .circle__rect--bot {
-    bottom: 10px;
+  bottom: 10px;
 }
 
 .fav-section__text {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 28px;
-    color: #ABABAB;
-    padding-left: 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: #ababab;
+  padding-left: 10px;
 }
 
-
 .context__intro {
-    padding-bottom: 43px;
+  padding-bottom: 43px;
 }
 
 .context__greeting {
-    margin: 0;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 32px;
-    line-height: 44px;
-    color: #333333;
+  margin: 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 44px;
+  color: #333333;
 }
 
 .context__desc {
-    margin: 0;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 44px;
-    color: #333333;
+  margin: 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 44px;
+  color: #333333;
 }
 
 .jokes__input {
-    border: 2px solid #ababab;
-    background: none;
+  border: 2px solid #ababab;
+  background: none;
 }
 
 /* Changing radio inputs  */
 
 .input__name {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
-
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 26px;
-    color: #333333;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 26px;
+  color: #333333;
 }
 
 .input__name input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
 }
 
 .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    border: 2px solid #ABABAB;
-    background-color: #fff;
-    border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border: 2px solid #ababab;
+  background-color: #fff;
+  border-radius: 50%;
 }
 
-.input__name:hover input~.checkmark {
-    background-color: #ccc;
+.input__name:hover input ~ .checkmark {
+  background-color: #ccc;
 }
 
-.input__name input:checked~.checkmark {
-    border: 2px solid #333333;
+.input__name input:checked ~ .checkmark {
+  border: 2px solid #333333;
 }
 
 .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
+  content: "";
+  position: absolute;
+  display: none;
 }
 
-.input__name input:checked~.checkmark:after {
-    display: block;
+.input__name input:checked ~ .checkmark:after {
+  display: block;
 }
 
 .input__name .checkmark:after {
-    top: 5px;
-    left: 5px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #333333;
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #333333;
 }
 
-
 .inputs {
-    padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 /* finished inputs   */
 
-
 .get-a-joke {
-    background: linear-gradient(92.01deg, #8EA7FF 0%, #7291FF 100%);
-    border-radius: 10px;
-    width: 152px;
-    height: 42px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 22px;
-    color: #FFFFFF;
-    transition: 0.3s;
-    outline: none;
+  background: linear-gradient(92.01deg, #8ea7ff 0%, #7291ff 100%);
+  border-radius: 10px;
+  width: 152px;
+  height: 42px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+  transition: 0.3s;
+  outline: none;
 }
 
 .get-a-joke:hover {
-    transform: scale(1.13);
-    cursor: pointer;
+  transform: scale(1.13);
+  cursor: pointer;
 }
 
 .context__get-a-joke {
-    padding-bottom: 40px
+  padding-bottom: 40px;
 }
 
 .categories-from-api {
-    padding: 8px 0 10px 0;
-    display: flex;
-    flex-wrap: wrap;
-    display: none;
+  padding: 8px 0 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  display: none;
 }
 
 .search-input {
-    display: none;
+  display: none;
 }
 
 .forsearch {
-    width: 100%;
-    border: 2px solid #333333;
-    border-radius: 10px;
-    padding: 10px 0 10px 15px;
+  width: 100%;
+  border: 2px solid #333333;
+  border-radius: 10px;
+  padding: 10px 0 10px 15px;
 }
 
 .forsearch::placeholder {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 22px;
-    color: #ABABAB;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ababab;
 }
 
 .active {
-    display: flex;
+  display: flex;
 }
 
 .category-api {
-    margin: 0 10px 10px 0;
-    border: 2px solid #F8F8F8;
-    box-sizing: border-box;
-    border-radius: 6px;
+  margin: 0 10px 10px 0;
+  border: 2px solid #f8f8f8;
+  box-sizing: border-box;
+  border-radius: 6px;
 
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #ABABAB;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ababab;
 
-    text-align: center;
-    padding: 6px 15px;
-    transition: 0.2s;
+  text-align: center;
+  padding: 6px 15px;
+  transition: 0.2s;
 }
 
 .category-api:hover {
-    background: #F8F8F8;
-    color: #333333;
-    cursor: pointer;
+  background: #f8f8f8;
+  color: #333333;
+  cursor: pointer;
 }
 
 .checked {
-    border: 2px solid #333333;
-    color: #333333;
+  border: 2px solid #333333;
+  color: #333333;
 }
 
 /* Jokes */
 
-
 .joke__container {
-    background: #F8F8F8;
-    border-radius: 20px;
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+  background: #f8f8f8;
+  border-radius: 20px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 .joke__container--fav {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 .heart {
-    display: block;
-    padding: 20px 20px 10px 0;
-    margin-left: auto;
+  display: block;
+  padding: 20px 20px 10px 0;
+  margin-left: auto;
 }
 
 .heart:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .joke_content {
-    padding: 0 20px 20px 80px;
-    position: relative;
+  padding: 0 20px 20px 80px;
+  position: relative;
 }
 
 .joke_content::before {
-    display: block;
-    content: '';
-    background-color: #fff;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    left: 20px;
-    border-radius: 50%;
-    background-image: url('../img/static-icon.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 20px;
+  display: block;
+  content: "";
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 20px;
+  border-radius: 50%;
+  background-image: url("../img/static-icon.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 20px;
 }
 
 .joke__ID {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 14px;
-    color: #ABABAB;
-    padding-bottom: 5px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 14px;
+  color: #ababab;
+  padding-bottom: 5px;
 }
 
 .joke__ID-link {
-    color: #7291FF;
+  color: #7291ff;
 }
 
 .joke__value {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 26px;
-    color: #333333;
-    padding-bottom: 28px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 26px;
+  color: #333333;
+  padding-bottom: 28px;
 }
 
 .joke__last-update {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: normal;
-    font-size: 10px;
-    line-height: 14px;
-    color: #ABABAB;
-    padding-bottom: 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 14px;
+  color: #ababab;
+  padding-bottom: 10px;
 }
 
 .joke__category {
-    display: inline-block;
-    padding: 0 20px;
-    height: 24px;
-    background: #FFFFFF;
-    border-radius: 6px;
-    text-align: center;
+  display: inline-block;
+  padding: 0 20px;
+  height: 24px;
+  background: #ffffff;
+  border-radius: 6px;
+  text-align: center;
 
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 24px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #333333;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 24px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #333333;
 }
 
 .favourite__section-dark,
 .favourite__section {
-    background: #F8F8F8;
-    width: 100vw;
-    min-height: -webkit-fill-available;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 3;
-    opacity: 0;
-    transition: 0.3s;
-    visibility: hidden;
+  background: #f8f8f8;
+  width: 100vw;
+  min-height: -webkit-fill-available;
+  /* height: 100vmax; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  opacity: 0;
+  transition: 0.3s;
+  visibility: hidden;
 }
 
 .favourite__section {
-    right: 0;
-    padding: 88px 0 20px 0;
+  right: 0;
+  padding: 88px 0 20px 0;
 }
 
 .favourite__section-dark {
-    background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .circle__cross {
-    box-sizing: border-box;
-    width: 28px;
-    height: 28px;
-    padding: 6px;
-    opacity: 0;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  padding: 6px;
+  opacity: 0;
 }
 
 .fallout-active {
-    opacity: 1;
-    right: 0;
-    visibility: visible;
-    width: 100%;
+  opacity: 1;
+  right: 0;
+  visibility: visible;
+  width: 100%;
 }
 
 .make-cross {
-    display: none;
+  display: none;
 }
 
 .section__name {
-    display: none;
+  display: none;
 }
 
 .joke__container--fav {
-    margin: auto;
-    margin-bottom: 20px;
-    width: calc(100% - 40px);
-
+  margin: auto;
+  margin-bottom: 20px;
+  width: calc(100% - 40px);
 }
 
 .joke__category--fav {
-    background-color: #F8F8F8;
+  background-color: #f8f8f8;
 }
 
 @media (min-width: 800px) {
-    .container {
-        width: 754px;
-    }
+  .container {
+    width: 754px;
+  }
 
-    .joke_content {
-        padding: 0 40px 20px 100px;
-    }
+  .joke_content {
+    padding: 0 40px 20px 100px;
+  }
 
-    .joke__info {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
+  .joke__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .favourite__section {
-        width: 480px;
-    }
+  .favourite__section {
+    width: 480px;
+  }
 
-    .context__header {
-        padding-top: 40px;
-    }
+  .context__header {
+    padding-top: 40px;
+  }
 }
 
 @media (min-width: 1440px) {
-    .container {
-        width: 680px;
-        margin-left: 140px;
-    }
+  .container {
+    width: 680px;
+    margin-left: 140px;
+  }
 
-    .favourite__section-dark,
-    .favourite__section {
-        visibility: visible;
-        opacity: 1;
-        right: 0;
-        width: 480px;
-    }
+  .favourite__section-dark,
+  .favourite__section {
+    visibility: visible;
+    opacity: 1;
+    right: 0;
+    width: 480px;
+  }
 
-    .favourite__section {
-        padding: 40px;
-    }
+  .favourite__section {
+    padding: 40px;
+  }
 
-    .favourite__section-dark {
-        width: 0px;
-    }
+  .favourite__section-dark {
+    width: 0px;
+  }
 
-    .fav-section {
-        display: none;
-    }
+  .fav-section {
+    display: none;
+  }
 
-    .section__name {
-        display: block;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 28px;
-        color: #ABABAB;
-        padding-bottom: 20px;
-    }
+  .section__name {
+    display: block;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    color: #ababab;
+    padding-bottom: 20px;
+  }
 }
